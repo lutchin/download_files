@@ -1,0 +1,27 @@
+{% extends 'FOSUserBundle::layout.html.twig' %}
+
+{% block body %}
+    <div class="well">
+                <h2>Список файлов на сервере:</h2>
+                <ul class="nav nav-pills nav-stacked">
+                {% for file in files %}
+
+            <li class="active"> <p >Имя пользователя: {{ file.user }} <a  href="{{ path('_file', { 'imageFile': file.imageFile }) }}">Файл №{{ file.id }}</a></p></li>
+            {% else %}
+            <p class="navbar-text">Загруженных файлов нет</p>
+            {% endfor %}
+            </ul>
+    </div>
+
+    <div class="well">
+
+            {{ form_start(form) }}
+
+            <p>{{ form_row(form.imageFile) }}</p>
+            <p>  {{ form_row(form.save) }}</p>
+
+            {{ form_end(form) }}
+
+    </div>
+
+{% endblock body %}

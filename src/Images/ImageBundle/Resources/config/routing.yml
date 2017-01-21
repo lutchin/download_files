@@ -1,0 +1,12 @@
+images_image_homepage:
+    path:     /
+    defaults: { _controller: ImagesImageBundle:Page:index }
+
+
+ImagesImagesBundle_file:
+    path:  /{imageFile}
+    defaults: { _controller: "ImagesImageBundle:File:show" }
+
+
+
+
